@@ -1,4 +1,16 @@
-function handler(Request) {
-  return new Response("Hello, World!");
-}
-Deno.serve(handler);
+Deno.serve(async req => {
+    let path = new URL(req.url).pathname;
+    switch (path) {
+      case "/":
+      case "/index.html":
+        path = "./web-src/index.html";
+        break;
+      case "/script.js":
+        path = "./web-src/script.js";
+        break;
+      default:
+        return new Response("Not Found", { status: 404 });
+    }
+    const file = await Deno.open(path);
+    return new Response(file.readable)
+});
