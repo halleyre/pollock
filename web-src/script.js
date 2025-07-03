@@ -1,1 +1,5 @@
-document.getElementById("legocity").innerHTML = "a man has fallen into the river!";
+import init, { legocity } from "./pkg/pollock.js";
+
+init().then(() => {
+  legocity("a man");
+});
