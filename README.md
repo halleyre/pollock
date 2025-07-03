@@ -6,7 +6,7 @@ deno, wasm and webgpu
 `wasm-pack build --target web`
 
 ## hosting
-`python3 -m http.server`
+`deno task host`
 
 ## TODO
-implement deno http server for wasm
+webgpu

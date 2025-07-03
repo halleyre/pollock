@@ -15,7 +15,6 @@ pkgs.mkShell {
     wasm-bindgen-cli
 
     deno
-    python3 # temp, work on deno impl
   ];
 
   # inputsFrom = with pkgs; [
