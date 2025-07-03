@@ -10,6 +10,7 @@ Deno.serve(async req => {
     console.log(`${req.method} ${path}`)
     switch (req.method) {
       case "GET":
+        if (!lookup[path]) return new Response("no", { status: 404 });
         const file = await Deno.open(lookup[path].path);
         return new Response(file.readable, {
           headers: {"content-type": lookup[path].type},

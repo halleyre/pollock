@@ -1,5 +1,9 @@
 # pollock
 
+**WebGPU is not supported on my laptop >:(**
+(https://issues.chromium.org/issues/42242119)
+shelving for later :(
+
 deno, wasm and webgpu
 
 ## building

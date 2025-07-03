@@ -1,5 +1,6 @@
 {
   "tasks": {
-    "host": "deno run --watch --allow-read --allow-net main.js"
-  }
+    "host": "deno run --watch --allow-read --allow-net host.js",
+    "display": "deno run --watch --allow-read display.js",
+  },
 }
