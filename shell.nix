@@ -1,6 +1,6 @@
 {
-  pkgs ? import (fetchTarball "channel:nixos-25.05") {},
-  fenix ? import (fetchTarball "https://github.com/nix-community/fenix/archive/61b4f1e21bd631da91981f1ed74c959d6993f554.tar.gz") {},
+  pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/472908faa934.tar.gz") {},
+  fenix ? import (fetchTarball "https://github.com/nix-community/fenix/archive/e60617a.tar.gz") {},
 }:
 
 pkgs.mkShell {

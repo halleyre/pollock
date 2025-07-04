@@ -1,16 +1,14 @@
 # pollock
 
-**WebGPU is not supported on my laptop >:(**
-(https://issues.chromium.org/issues/42242119)
-shelving for later :(
-
 deno, wasm and webgpu
+
+Chromium (Dawn) webgpu blocklists my adreno gpu (https://issues.chromium.org/issues/42242119)
+(can avoid with unsafe flags)
+
+Deno (gfx-rs/wgpu) doesn't support
 
 ## building
 `wasm-pack build --target web`
 
 ## hosting
 `deno task host`
-
-## TODO
-webgpu
