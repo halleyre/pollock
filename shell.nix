@@ -8,7 +8,7 @@ pkgs.mkShell {
     (with fenix; combine [
       stable.rustc
       stable.cargo
-      targets.wasm32-unknown-unknown.stable.rust-std
+      targets.wasm32-wasi.stable.rust-std
     ])
 
     wasm-pack
