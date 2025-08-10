@@ -1,0 +1,8 @@
+package halleyre:pollock;
+
+world legocity {
+    import web-elements: interface {
+        alert: func(msg: string);
+    }
+    export legocity: func(name: string);
+}

@@ -8,17 +8,16 @@ pkgs.mkShell {
     (with fenix; combine [
       stable.rustc
       stable.cargo
-      targets.wasm32-unknown-unknown.stable.rust-std
+      targets.wasm32-wasip2.stable.rust-std
     ])
 
-    wasm-pack
-    wasm-bindgen-cli
-
     deno
+    
   ];
 
-  # inputsFrom = with pkgs; [
-  # ];
+  inputsFrom = with pkgs; [
+    nodejs
+  ];
 
   RUST_BACKTRACE=1;
 }

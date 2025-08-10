@@ -1,11 +1,11 @@
-use wasm_bindgen::prelude::*;
+wit_bindgen::generate!();
 
-#[wasm_bindgen]
-extern "C" {
-    pub fn alert(s: &str);
+struct Component;
+
+impl Guest for Component {
+    fn legocity(name: String) {
+        web_elements::alert(&format!("{} has fallen into the river in lego city!", name));
+    }
 }
 
-#[wasm_bindgen]
-pub fn legocity(name: &str) {
-    alert(&format!("{} has fallen into the river in lego city!", name));
-}
+export!(Component);
