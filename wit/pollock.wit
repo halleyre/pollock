@@ -1,4 +1,4 @@
-package halleyre:pollock;
+package halleyre:pollock@0.0.1;
 
 world legocity {
     import web-elements: interface {

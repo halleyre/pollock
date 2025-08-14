@@ -7,8 +7,11 @@ Chromium (Dawn) webgpu blocklists my adreno gpu (https://issues.chromium.org/iss
 
 Deno (gfx-rs/wgpu) doesn't support my gpu either booo
 
+
+**use `nix-shell` to configure environment**
+
 ## building
-`wasm-pack build --target web`
+`POCK.build -wj`
 
 ## hosting
 `deno task host`

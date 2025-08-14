@@ -1,8 +1,10 @@
 const lookup = {
-  "/":                {path: "./web-src/index.html",  type: "text/html"},
-  "/script":          {path: "./web-src/script.js",   type: "text/javascript"},
-  "/pollock":         {path: "./pkg/pollock.js",      type: "text/javascript"},
-  "/pollock_bg.wasm": {path: "./pkg/pollock_bg.wasm", type: "application/wasm"},
+  "/":             {path: "./web-src/index.html",                 type: "text/html"},
+  "/script":       {path: "./web-src/script.js",                  type: "text/javascript"},
+  "/pollock":      {path: "./build/javascript/pollock.js",        type: "text/javascript"},
+  "/web-elements": {path: "./web-src/interfaces/web-elements.js", type: "text/javascript"},
+  "/pollock.core.wasm": {
+    path: "./build/javascript/pollock.core.wasm", type: "application/wasm"},
 };
 
 Deno.serve(async req => {

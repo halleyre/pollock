@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o pipefail
+
+eval set -- "$(getopt -o nwj --long native,wasm,javascript -- "$@")"
+
+while true; do
+	case "$1" in
+		-n | --native)    NATIVE=true; shift; ;;
+		-w | --wasm)      WASM=true; shift; ;;
+		-j | --javacript) JAVASCRIPT=true; shift; ;;
+		--) shift; break; ;;
+	esac
+done
+
+WDIR="$(dirname "${BASH_SOURCE[0]}")/../"
+
+[[ -n $NATIVE ]] && echo "native build not yet implemented"
+[[ -n $WASM ]] && (
+	cargo -C $WDIR build           \
+		--artifact-dir build/wasm    \
+		--target wasm32-wasip2       \
+		-Z unstable-options          \
+		-Z build-std=std,panic_abort \
+		-Z build-std-features=panic_immediate_abort
+)
+[[ -n $JAVASCRIPT ]] && (
+	jco transpile $WDIR/build/wasm/pollock.wasm \
+		-o $WDIR/build/javascript                 \
+		--no-wasi-shim                            \
+		--minify                                  \
+)
