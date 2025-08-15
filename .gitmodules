@@ -1,0 +1,3 @@
+[submodule "wit/wasi-gfx"]
+	path = wit/wasi-gfx
+	url = git@github.com:WebAssembly/wasi-gfx.git
