@@ -1,4 +1,4 @@
-mod wasi {
+mod wgfx {
     pub mod webgpu;
     pub mod frame_buffer;
     pub mod surface;
@@ -16,7 +16,7 @@ impl Guest for Component {
     }
 
     fn run() -> Result<String, String> {
-        use wasi::webgpu;
+        use wgfx::webgpu;
         let gpu = webgpu::get_gpu();
         let adapter = gpu.request_adapter(None).ok_or(String::from("no adapter"))?;
 
