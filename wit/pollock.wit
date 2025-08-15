@@ -5,4 +5,5 @@ world legocity {
         alert: func(msg: string);
     }
     export legocity: func(name: string);
+    export run: func() -> result<string, string>;
 }
