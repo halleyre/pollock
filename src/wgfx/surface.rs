@@ -6,4 +6,4 @@ wit_bindgen::generate!({
     }
 });
 
-pub use self::wasi::surface::surface::*;
+// pub use self::wasi::surface::surface::*;

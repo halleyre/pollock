@@ -5,4 +5,4 @@ wit_bindgen::generate!({
     }
 });
 
-pub use self::wasi::frame_buffer::frame_buffer::*;
+// pub use self::wasi::frame_buffer::frame_buffer::*;

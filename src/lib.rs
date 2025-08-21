@@ -15,10 +15,11 @@ impl Guest for Component {
         web_elements::alert(&format!("{} has fallen into the river in lego city!", name));
     }
 
-    fn run() -> Result<String, String> {
+    async fn run() -> Result<String, String> {
         use wgfx::webgpu;
         let gpu = webgpu::get_gpu();
-        let adapter = gpu.request_adapter(None).ok_or(String::from("no adapter"))?;
+        let _adapter = gpu.request_adapter(None)
+                         .await.ok_or(String::from("no adapter"))?;
 
         Ok("dope".into())
     }

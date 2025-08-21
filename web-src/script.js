@@ -4,8 +4,10 @@ document.getElementById("aye").innerHTML = "start the rescue helicopter";
 /* ------------ *
  * Web Assembly *
  * ------------ */ 
-import { legocity } from "/pollock";
+import { legocity, run } from "/pollock";
 legocity("a man");
+
+await run();
 
 /* ------ *
  * WebGPU *
